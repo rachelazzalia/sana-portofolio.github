@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minatozaki Sana 🎀</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="font.zip" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft-pink': '#fce8ee',
+                        'dusty-pink': '#f3b8c8',
+                        'rose-pink': '#e891a8',
+                        'cream-light': '#fffcf9',
+                        'cream-base': '#fbf4eb',
+                        'cream-dark': '#f3e6d8',
+                        'berry-text': '#5c3a43',
+                        'dot-dark': '#2e262a',
+                    },
+                    fontFamily: {
+                        'garamond': ['"Apple Garamond"', '"EB Garamond"', 'Garamond', 'Georgia', 'serif'],
+                        'arial-narrow': ['"Arial Narrow"', 'Arial', 'sans-serif'],
+                        'display': ['"Apple Garamond"', '"EB Garamond"', 'Garamond', 'serif'],
+                        'handwriting': ['"Apple Garamond"', '"EB Garamond"', 'Garamond', 'serif'],
+                        'sans': ['"Arial Narrow"', 'Arial', 'sans-serif'],
+                        'cute': ['"Arial Narrow"', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="min-h-screen relative antialiased selection:bg-rose-pink selection:text-white">
+
+    <!-- Soft Decorative Floating Sparkles & Bows -->
+    <div class="fixed top-12 left-6 text-2xl animate-float pointer-events-none opacity-60">✨</div>
+    <div class="fixed top-1/3 right-8 text-3xl animate-float-slow pointer-events-none opacity-70">🎀</div>
+    <div class="fixed bottom-20 left-10 text-2xl animate-float pointer-events-none opacity-60">🌸</div>
+    <div class="fixed bottom-12 right-12 text-2xl animate-float-slow pointer-events-none opacity-60">💖</div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-4 z-50 max-w-5xl mx-auto px-4 mb-8">
+        <nav class="chiffon-overlay border-2 border-dusty-pink/70 rounded-full px-6 py-3 flex items-center justify-between shadow-md">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="text-2xl group-hover:scale-125 transition-transform">🎀</span>
+                <span class="font-handwriting text-2xl md:text-3xl font-bold text-berry-text tracking-wide">Sana's Portofolio</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-6 font-cute text-berry-text font-medium text-sm">
+                <a href="#about" class="hover:text-rose-pink transition-colors">Tentang Aku</a>
+                <a href="#skills" class="hover:text-rose-pink transition-colors">Keahlian</a>
+                <a href="#portfolio" class="hover:text-rose-pink transition-colors">Portofolio</a>
+                <a href="#experience" class="hover:text-rose-pink transition-colors">Pengalaman</a>
+                <a href="#contact" class="hover:text-rose-pink transition-colors">Kontak</a>
+            </div>
+
+            <a href="#contact" class="bg-rose-pink hover:bg-berry-text text-white font-cute text-xs md:text-sm px-4 py-2 rounded-full shadow-sm hover:shadow transition-all flex items-center gap-1.5">
+                <span>Hubungi Aku</span>
+                <span>💌</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto px-4 pb-20 space-y-16">
+
+        <!-- Hero Section -->
+        <section class="girly-card p-6 md:p-10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+            <!-- Background Cute Sparkle Badge -->
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-soft-pink rounded-full opacity-50 blur-xl pointer-events-none"></div>
+
+            <!-- Profile Picture Container -->
+            <div class="relative flex-shrink-0 group">
+                <!-- Frame Decoration (Bow & Lace Accent) -->
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-20 text-3xl animate-bounce">
+                    🎀
+                </div>
+                
+                <!-- Polka dot border ring -->
+                <div class="w-48 h-48 md:w-56 md:h-56 rounded-full p-2.5 bg-gradient-to-tr from-dusty-pink via-cream-base to-rose-pink shadow-lg relative">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-cream-light border-4 border-white relative shadow-inner">
+                        <img id="profileImage" src="sanaicon.jpg" alt="Foto Profil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Interactive Photo Change Trigger -->
+                    <label for="imageUpload" class="absolute bottom-1 right-1 bg-white hover:bg-soft-pink text-berry-text p-2.5 rounded-full shadow-md border-2 border-dusty-pink cursor-pointer transition-all hover:scale-110" title="Ganti Foto Profil">
+                        <i class="fa-solid fa-camera text-sm"></i>
+                        <input type="file" id="imageUpload" accept="image/*" class="hidden" onchange="previewProfileImage(event)">
+                    </label>
+                </div>
+
+                <!-- Status Badge -->
+                <div class="mt-3 flex justify-center">
+                    <span class="bg-cream-light border border-dusty-pink text-berry-text text-xs font-cute px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        Terbuka untuk Kolaborasi 🌸
+                    </span>
+                </div>
+            </div>
+
+            <!-- Profile Info & Bio -->
+            <div class="text-center md:text-left space-y-4 flex-1">
+                <div class="inline-block bg-soft-pink text-berry-text border border-dusty-pink/80 px-3 py-1 rounded-full text-xs font-cute font-medium">
+                    ✨ Welcome to my creative aesthetic corner!
+                </div>
+                
+                <h1 class="text-3xl md:text-5xl font-garamond font-bold text-berry-text leading-tight">
+                    Halo, Aku <span class="text-rose-pink font-garamond text-4xl md:text-6xl underline decoration-wavy decoration-dusty-pink">Minatozaki Sana</span> 
+                </h1>
+
+                <p class="font-cute text-rose-pink font-semibold text-sm md:text-base tracking-wide">
+                     seorang penyanyi asal Jepang. Saya merupakan anggota dari grup vokal wanita asal Korea Selatan, Twice, yang dibentuk oleh JYP Entertainment melalui acara realitas Sixteen pada tahun 2015 🎨🌸
+                </p>
+
+                <p class="text-berry-text/90 text-sm md:text-base leading-relaxed max-w-xl font-cute">
+                    sebagai sub-vokalis (sub vocalist) atau penyanyi dan penari pendukung (lead dancer/vocalist)
+                </p>
+
+                <!-- Action Buttons & Audio Player Toggle -->
+                <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3 items-center">
+                    <a href="#portfolio" class="bg-rose-pink hover:bg-berry-text text-white font-cute text-sm px-5 py-2.5 rounded-2xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <span>Lihat Karya</span>
+                        <span>🎀</span>
+                    </a>
+                    
+                    <a href="#contact" class="bg-cream-base hover:bg-soft-pink text-berry-text border border-dusty-pink font-cute text-sm px-5 py-2.5 rounded-2xl shadow-sm transition-all flex items-center gap-2">
+                        <span>Unduh CV</span>
+                        <i class="fa-solid fa-download text-xs"></i>
+                    </a>
+
+                    <!-- Aesthetic Mini BGM Player Button -->
+                    <button onclick="toggleMusic()" id="musicBtn" class="bg-soft-pink border border-dusty-pink text-berry-text p-2.5 rounded-2xl hover:bg-dusty-pink/40 transition-colors shadow-sm text-xs font-cute flex items-center gap-1.5" title="Putar Musik Soft">
+                        <i class="fa-solid fa-music text-rose-pink"></i>
+                        <span id="musicText">Lofi Ambient 🎵</span>
+                    </button>
+                    <!-- Audio element (Cozy ambient soft tune) -->
+                    <audio id="bgmAudio" loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=cozy-lofi-song-114228.mp3"></audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="space-y-6">
+            <div class="text-center space-y-2">
+                <span class="text-2xl">🧸</span>
+                <h2 class="text-3xl md:text-4xl font-handwriting font-bold text-berry-text">Tentang Diriku</h2>
+                <p class="font-cute text-xs text-rose-pink uppercase tracking-widest">Get to know me better</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Bio Card 1 -->
+                <div class="girly-card p-6 text-center space-y-3">
+                    <div class="w-12 h-12 mx-auto bg-soft-pink rounded-2xl flex items-center justify-center text-xl shadow-inner">
+                        🩰
+                    </div>
+                    <h3 class="font-cute text-lg font-bold text-berry-text">Gaya Desain</h3>
+                    <p class="text-xs text-berry-text/80 leading-relaxed">
+                        Menyukai warna pastel, palet cream, estetika vintage-modern, serta tata letak yang bersih dan rapi.
+                    </p>
+                </div>
+
+                <!-- Bio Card 2 -->
+                <div class="girly-card p-6 text-center space-y-3">
+                    <div class="w-12 h-12 mx-auto bg-soft-pink rounded-2xl flex items-center justify-center text-xl shadow-inner">
+                        🍵
+                    </div>
+                    <h3 class="font-cute text-lg font-bold text-berry-text">Favorit & Hobi</h3>
+                    <p class="text-xs text-berry-text/80 leading-relaxed">
+                        Matcha latte, mendengarkan musik indie-pop, menggambar ilustrasi bunga, dan journaling harian.
+                    </p>
+                </div>
+
+                <!-- Bio Card 3 -->
+                <div class="girly-card p-6 text-center space-y-3">
+                    <div class="w-12 h-12 mx-auto bg-soft-pink rounded-2xl flex items-center justify-center text-xl shadow-inner">
+                        🌷
+                    </div>
+                    <h3 class="font-cute text-lg font-bold text-berry-text">Misi Utama</h3>
+                    <p class="text-xs text-berry-text/80 leading-relaxed">
+                        Menghadirkan pengalaman menyanyi yang memberikan rasa hangat, kenyamanan visual, dan senyuman bagi penggunanya.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Soft Stats Widget -->
+            <div class="girly-card p-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="space-y-1">
+                    <div class="font-cute text-2xl md:text-3xl font-bold text-rose-pink">15+</div>
+                    <div class="text-xs font-medium text-berry-text/70">Lagu 🎀</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="font-cute text-2xl md:text-3xl font-bold text-rose-pink">11 tahun+</div>
+                    <div class="text-xs font-medium text-berry-text/70">Tahun Pengalaman ✨</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="font-cute text-2xl md:text-3xl font-bold text-rose-pink">999+</div>
+                    <div class="text-xs font-medium text-berry-text/70">ONCE Bahagia 💖</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="font-cute text-2xl md:text-3xl font-bold text-rose-pink">100%</div>
+                    <div class="text-xs font-medium text-berry-text/70">Cinta & Kasih Sayang 🌸</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Tools Section -->
+        <section id="skills" class="space-y-6">
+            <div class="text-center space-y-2">
+                <span class="text-2xl">🍰</span>
+                <h2 class="text-3xl md:text-4xl font-handwriting font-bold text-berry-text">Keahlian & Tools</h2>
+                <p class="font-cute text-xs text-rose-pink uppercase tracking-widest">My sweet skill palette</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Design & Creative Skills -->
+                <div class="girly-card p-6 space-y-4">
+                    <h3 class="font-cute text-lg font-bold text-berry-text flex items-center gap-2 lace-border pb-2">
+                        <span>🎨 Karakter dan Sifat</span>
+                    </h3>
+
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-cute font-medium text-berry-text mb-1">
+                                <span>Ceria</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="w-full h-3 bg-soft-pink rounded-full overflow-hidden p-0.5 border border-dusty-pink/50">
+                                <div class="h-full bg-gradient-to-r from-dusty-pink to-rose-pink rounded-full w-[90%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-cute font-medium text-berry-text mb-1">
+                                <span>Ramah</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full h-3 bg-soft-pink rounded-full overflow-hidden p-0.5 border border-dusty-pink/50">
+                                <div class="h-full bg-gradient-to-r from-dusty-pink to-rose-pink rounded-full w-[85%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-cute font-medium text-berry-text mb-1">
+                                <span>Cute</span>
+                                <span>98%%</span>
+                            </div>
+                            <div class="w-full h-3 bg-soft-pink rounded-full overflow-hidden p-0.5 border border-dusty-pink/50">
+                                <div class="h-full bg-gradient-to-r from-dusty-pink to-rose-pink rounded-full w-[80%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development & Tools -->
+                <div class="girly-card p-6 space-y-4">
+                    <h3 class="font-cute text-lg font-bold text-berry-text flex items-center gap-2 lace-border pb-2">
+                        <span>💻 Keahlian</span>
+                    </h3>
+
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-cute font-medium text-berry-text mb-1">
+                                <span>Menyanyi</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="w-full h-3 bg-soft-pink rounded-full overflow-hidden p-0.5 border border-dusty-pink/50">
+                                <div class="h-full bg-gradient-to-r from-dusty-pink to-rose-pink rounded-full w-[88%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-cute font-medium text-berry-text mb-1">
+                                <span>Dance</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full h-3 bg-soft-pink rounded-full overflow-hidden p-0.5 border border-dusty-pink/50">
+                                <div class="h-full bg-gradient-to-r from-dusty-pink to-rose-pink rounded-full w-[75%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-cute font-medium text-berry-text mb-1">
+                                <span>Visual</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="w-full h-3 bg-soft-pink rounded-full overflow-hidden p-0.5 border border-dusty-pink/50">
+                                <div class="h-full bg-gradient-to-r from-dusty-pink to-rose-pink rounded-full w-[92%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cute Tool Badges -->
+            <div class="flex flex-wrap justify-center gap-2 pt-2">
+                <span class="bg-white/80 border border-dusty-pink text-berry-text text-xs font-cute px-3 py-1.5 rounded-full shadow-sm">🌸 TWICE</span>
+                <span class="bg-white/80 border border-dusty-pink text-berry-text text-xs font-cute px-3 py-1.5 rounded-full shadow-sm">🎀 Dance</span>
+                <span class="bg-white/80 border border-dusty-pink text-berry-text text-xs font-cute px-3 py-1.5 rounded-full shadow-sm">✨ Photoshoot</span>
+                <span class="bg-white/80 border border-dusty-pink text-berry-text text-xs font-cute px-3 py-1.5 rounded-full shadow-sm">🍓 Brand Ambassador</span>
+                <span class="bg-white/80 border border-dusty-pink text-berry-text text-xs font-cute px-3 py-1.5 rounded-full shadow-sm">🧸 Selca</span>
+                <span class="bg-white/80 border border-dusty-pink text-berry-text text-xs font-cute px-3 py-1.5 rounded-full shadow-sm">🧁 Variety Show</span>
+            </div>
+        </section>
+
+        <!-- Portfolio Projects Showcase Section -->
+        <section id="portfolio" class="space-y-6">
+            <div class="text-center space-y-2">
+                <span class="text-2xl">🌷</span>
+                <h2 class="text-3xl md:text-4xl font-handwriting font-bold text-berry-text">Galeri Karya</h2>
+                <p class="font-cute text-xs text-rose-pink uppercase tracking-widest"> with love and care</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex justify-center gap-2 font-cute text-xs flex-wrap">
+                <button onclick="filterPortfolio('all')" class="filter-btn active bg-rose-pink text-white border border-rose-pink px-4 py-1.5 rounded-full transition-all">Semua Karya</button>
+                <button onclick="filterPortfolio('uiux')" class="filter-btn bg-cream-light text-berry-text border border-dusty-pink px-4 py-1.5 rounded-full hover:bg-soft-pink transition-all">UI/UX Design</button>
+                <button onclick="filterPortfolio('web')" class="filter-btn bg-cream-light text-berry-text border border-dusty-pink px-4 py-1.5 rounded-full hover:bg-soft-pink transition-all">Website Aesthetic</button>
+                <button onclick="filterPortfolio('art')" class="filter-btn bg-cream-light text-berry-text border border-dusty-pink px-4 py-1.5 rounded-full hover:bg-soft-pink transition-all">Seni Digital</button>
+            </div>
+
+            <!-- Portfolio Items Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="portfolio-item uiux girly-card overflow-hidden group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="auraicon.jpg" alt="Project 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-berry-text/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                            <span class="bg-white/90 p-2 rounded-full text-berry-text text-sm"><i class="fa-solid fa-heart text-rose-pink"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <span class="bg-soft-pink text-rose-pink text-[10px] font-cute px-2.5 py-0.5 rounded-full">Debut Song</span>
+                            <h3 class="font-cute text-base font-bold text-berry-text mt-1">Released in 2015</h3>
+                            <a href="https://youtu.be/0rtV5esQT6I?si=e2yeCIDrz7P4J2E9">"Like OOH-AHH"🎀</a>
+                        </div>
+                        <div class="pt-2 lace-border flex justify-between items-center text-xs font-cute text-rose-pink">
+                            <span>youtube</span>
+                            <a href="#" class="hover:underline flex items-center gap-1">Detail 🎀</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item web girly-card overflow-hidden group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="angelicon.jpg" alt="Project 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-berry-text/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                            <span class="bg-white/90 p-2 rounded-full text-berry-text text-sm"><i class="fa-solid fa-heart text-rose-pink"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <span class="bg-soft-pink text-rose-pink text-[10px] font-cute px-2.5 py-0.5 rounded-full">Website</span>
+                            <h3 class="font-cute text-base font-bold text-berry-text mt-1">Flower Bloom Instagram</h3>
+                            <p class="text-xs text-berry-text/75 mt-1">Media sosial foto foto</p>
+                           <a href="https://www.instagram.com/m.by__sana/">"Instagram"🎀</a> 
+                        </div>
+                        <div class="pt-2 lace-border flex justify-between items-center text-xs font-cute text-rose-pink">
+                            <span>HTML & Tailwind</span>
+                            <a href="#" class="hover:underline flex items-center gap-1">Detail 🎀</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item art girly-card overflow-hidden group flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="spiralicon.jpg" alt="Project 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-berry-text/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                            <span class="bg-white/90 p-2 rounded-full text-berry-text text-sm"><i class="fa-solid fa-heart text-rose-pink"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <span class="bg-soft-pink text-rose-pink text-[10px] font-cute px-2.5 py-0.5 rounded-full">Solo Performance</span>
+                            <h3 class="font-cute text-base font-bold text-berry-text mt-1">Cover "CHEEZE"</h3>
+                            <p class="text-xs text-berry-text/75 mt-1">Kemampuan vocalku.</p>
+                            <a href="https://youtu.be/7123DLSc9FA?si=-HuYEFfOQ6tGfs2r">"CHEEZE"🎀</a>
+                        </div>
+                        <div class="pt-2 lace-border flex justify-between items-center text-xs font-cute text-rose-pink">
+                            <span>Procreate</span>
+                            <a href="#" class="hover:underline flex items-center gap-1">Detail 🎀</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Journey Timeline Section -->
+        <section id="experience" class="space-y-6">
+            <div class="text-center space-y-2">
+                <span class="text-2xl">📖</span>
+                <h2 class="text-3xl md:text-4xl font-handwriting font-bold text-berry-text">Jejak Langkah</h2>
+                <p class="font-cute text-xs text-rose-pink uppercase tracking-widest">My sweet journey so far</p>
+            </div>
+
+            <div class="girly-card p-6 md:p-8 space-y-6 relative">
+                <!-- Vertical soft line -->
+                <div class="absolute left-8 md:left-1/2 top-10 bottom-10 w-0.5 bg-dusty-pink/60 transform -translate-x-1/2 hidden md:block"></div>
+
+                <!-- Experience Item 1 -->
+                <div class="flex flex-col md:flex-row items-start gap-4 md:gap-8 relative">
+                    <div class="md:w-1/2 md:text-right space-y-1">
+                        <span class="bg-soft-pink text-rose-pink border border-dusty-pink px-3 py-0.5 rounded-full font-cute text-xs">2009 - 2014</span>
+                        <h3 class="font-cute text-base font-bold text-berry-text">TWICE</h3>
+                        <p class="text-xs text-rose-pink font-medium"> Sejak tahun 2009 hingga awal 2012, Sana belajar menari dan melatih bakat vokalnya di EXPG (Exile Professional Gym) cabang Osaka. Ini merupakan akademi tari ternama di Jepang yang membesarkan banyak talenta industri hiburan.</p>
+                        <p class="text-xs text-berry-text/80 leading-relaxed">Menyukai lifestyle & fashion.</p>
+                    </div>
+                    <div class="hidden md:flex w-8 h-8 rounded-full bg-rose-pink text-white items-center justify-center text-xs font-bold z-10 shadow border-2 border-white">
+                        🌸
+                    </div>
+                    <div class="md:w-1/2"></div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="flex flex-col md:flex-row items-start gap-4 md:gap-8 relative">
+                    <div class="md:w-1/2"></div>
+                    <div class="hidden md:flex w-8 h-8 rounded-full bg-rose-pink text-white items-center justify-center text-xs font-bold z-10 shadow border-2 border-white">
+                        🎀
+                    </div>
+                    <div class="md:w-1/2 space-y-1">
+                        <span class="bg-soft-pink text-rose-pink border border-dusty-pink px-3 py-0.5 rounded-full font-cute text-xs">2015 - Sekarang</span>
+                        <h3 class="font-cute text-base font-bold text-berry-text">Member TWICE</h3>
+                        <p class="text-xs text-rose-pink font-medium">Group K-pop</p>
+                        <p class="text-xs text-berry-text/80 leading-relaxed">Sub Vocalist dan Lead Dancer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="space-y-6">
+            <div class="text-center space-y-2">
+                <span class="text-2xl">💌</span>
+                <h2 class="text-3xl md:text-4xl font-handwriting font-bold text-berry-text">Mari Menyapa!</h2>
+                <p class="font-cute text-xs text-rose-pink uppercase tracking-widest">Send me a warm message</p>
+            </div>
+
+            <div class="girly-card p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contact Info Left -->
+                <div class="space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h3 class="font-cute text-xl font-bold text-berry-text flex items-center gap-2">
+                            <span>Mari Bekerja Sama!</span>
+                            <span>✨</span>
+                        </h3>
+                        <p class="text-xs md:text-sm text-berry-text/80 leading-relaxed">
+                            Punya ide proyek cantik, ingin menulis lagu, atau sekadar menyapa sambil minum teh? Kirimkan pesanmu di sini!
+                        </p>
+                    </div>
+
+                    <!-- Direct Contacts List -->
+                    <div class="space-y-3 font-cute text-xs">
+                        <div class="flex items-center gap-3 p-3 bg-cream-base rounded-xl border border-dusty-pink/60">
+                            <span class="w-8 h-8 rounded-lg bg-soft-pink flex items-center justify-center text-rose-pink text-sm"><i class="fa-solid fa-envelope"></i></span>
+                            <div>
+                                <div class="text-rose-pink font-semibold">Email</div>
+                                <div class="text-berry-text">jype@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-3 bg-cream-base rounded-xl border border-dusty-pink/60">
+                            <span class="w-8 h-8 rounded-lg bg-soft-pink flex items-center justify-center text-rose-pink text-sm"><i class="fa-solid fa-location-dot"></i></span>
+                            <div>
+                                <div class="text-rose-pink font-semibold">Lokasi</div>
+                                <div class="text-berry-text">Seoul, Korea 🌸</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="space-y-2">
+                        <div class="font-cute text-xs font-semibold text-berry-text">Temukan Aku Di:</div>
+                        <div class="flex gap-2 text-berry-text">
+                            <a href="#" class="w-9 h-9 rounded-full bg-soft-pink hover:bg-rose-pink hover:text-white flex items-center justify-center border border-dusty-pink transition-all shadow-sm"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="w-9 h-9 rounded-full bg-soft-pink hover:bg-rose-pink hover:text-white flex items-center justify-center border border-dusty-pink transition-all shadow-sm"><i class="fa-brands fa-pinterest"></i></a>
+                            <a href="#" class="w-9 h-9 rounded-full bg-soft-pink hover:bg-rose-pink hover:text-white flex items-center justify-center border border-dusty-pink transition-all shadow-sm"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#" class="w-9 h-9 rounded-full bg-soft-pink hover:bg-rose-pink hover:text-white flex items-center justify-center border border-dusty-pink transition-all shadow-sm"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Form -->
+                <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block font-cute text-xs text-berry-text font-semibold mb-1">Nama Kamu 🌸</label>
+                        <input type="text" required placeholder="Contoh: Princess Rose" class="w-full bg-cream-light border border-dusty-pink rounded-xl px-4 py-2.5 text-xs text-berry-text focus:outline-none focus:ring-2 focus:ring-rose-pink/50 transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block font-cute text-xs text-berry-text font-semibold mb-1">Alamat Email 💌</label>
+                        <input type="email" required placeholder="nama@email.com" class="w-full bg-cream-light border border-dusty-pink rounded-xl px-4 py-2.5 text-xs text-berry-text focus:outline-none focus:ring-2 focus:ring-rose-pink/50 transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block font-cute text-xs text-berry-text font-semibold mb-1">Pesan Manis 🎀</label>
+                        <textarea rows="4" required placeholder="Tuliskan pesan atau ide proyekmu di sini..." class="w-full bg-cream-light border border-dusty-pink rounded-xl px-4 py-2.5 text-xs text-berry-text focus:outline-none focus:ring-2 focus:ring-rose-pink/50 transition-all resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-rose-pink hover:bg-berry-text text-white font-cute text-xs py-3 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 font-semibold">
+                        <span>Kirim Pesan</span>
+                        <span>✨</span>
+                    </button>
+                    
+                    <div id="formSuccess" class="hidden text-center text-xs font-cute text-rose-pink bg-soft-pink p-2 rounded-xl border border-dusty-pink">
+                        Pesanmu berhasil terkirim! Terima kasih 💖
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Soft Footer -->
+    <footer class="chiffon-overlay border-t-2 border-dusty-pink/60 py-6 text-center text-xs font-cute text-berry-text">
+        <div class="max-w-5xl mx-auto px-4 space-y-2">
+            <p class="flex items-center justify-center gap-1">
+                Made with <span class="text-rose-pink text-sm">💖</span> and <span class="text-sm">✨</span> | Soft Girly Polka Dot Palette
+            </p>
+            <p class="text-[10px] text-berry-text/60">© 2026 Softie Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Image preview loader for the profile photo upload
+        function previewProfileImage(event) {
+            const input = event.target;
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profileImage').src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Music player toggle logic
+        let isPlaying = false;
+        function toggleMusic() {
+            const audio = document.getElementById('bgmAudio');
+            const btnText = document.getElementById('musicText');
+            if (!isPlaying) {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    btnText.innerText = "Playing Soft Tune 🎶";
+                }).catch(() => {
+                    btnText.innerText = "Klik Lagi 🎵";
+                });
+            } else {
+                audio.pause();
+                isPlaying = false;
+                btnText.innerText = "Lofi Ambient 🎵";
+            }
+        }
+
+        // Portfolio filtering logic
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Toggle button states
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-rose-pink', 'text-white', 'border-rose-pink');
+                btn.classList.add('bg-cream-light', 'text-berry-text', 'border-dusty-pink');
+            });
+            event.currentTarget.classList.remove('bg-cream-light', 'text-berry-text');
+            event.currentTarget.classList.add('bg-rose-pink', 'text-white', 'border-rose-pink');
+
+            // Show/hide portfolio items
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Form submission handling
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const successMsg = document.getElementById('formSuccess');
+            successMsg.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

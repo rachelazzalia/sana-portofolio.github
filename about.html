@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Aku | Soft Girly Portfolio 🎀</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Dancing+Script:wght@600;700&family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft-pink': '#fce8ee',
+                        'dusty-pink': '#f3b8c8',
+                        'rose-pink': '#e891a8',
+                        'cream-light': '#fffcf9',
+                        'cream-base': '#fbf4eb',
+                        'cream-dark': '#f3e6d8',
+                        'berry-text': '#5c3a43',
+                        'dot-dark': '#2e262a'
+                    },
+                    fontFamily: {
+                        'garamond': ['"Apple Garamond"', '"EB Garamond"', 'Garamond', 'Georgia', 'serif'],
+                        'sans': ['"Arial Narrow"', 'Arial', 'sans-serif'],
+                        'cute': ['"Arial Narrow"', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen relative antialiased selection:bg-rose-pink selection:text-white">
+    <div class="fixed top-12 left-6 text-2xl animate-float pointer-events-none opacity-60">✨</div>
+    <div class="fixed top-1/3 right-8 text-3xl animate-float-slow pointer-events-none opacity-70">🎀</div>
+    <div class="fixed bottom-20 left-10 text-2xl animate-float pointer-events-none opacity-60">🌸</div>
+    <div class="fixed bottom-12 right-12 text-2xl animate-float-slow pointer-events-none opacity-60">💖</div>
+
+    <header class="sticky top-4 z-50 max-w-5xl mx-auto px-4 mb-8">
+        <nav class="chiffon-overlay border-2 border-dusty-pink/70 rounded-full px-6 py-3 flex items-center justify-between shadow-md">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-2xl group-hover:scale-125 transition-transform">🎀</span>
+                <span class="font-handwriting text-2xl md:text-3xl font-bold text-berry-text tracking-wide">My Soft Space</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 font-cute text-berry-text font-medium text-sm">
+                <a href="about.html" class="hover:text-rose-pink transition-colors">Tentang Aku</a>
+                <a href="keahlian.html" class="hover:text-rose-pink transition-colors">Keahlian</a>
+                <a href="index.html#portfolio" class="hover:text-rose-pink transition-colors">Portofolio</a>
+                <a href="pengalaman.html" class="hover:text-rose-pink transition-colors">Pengalaman</a>
+                <a href="cv.html" class="hover:text-rose-pink transition-colors">CV</a>
+            </div>
+            <a href="index.html#contact" class="bg-rose-pink hover:bg-berry-text text-white font-cute text-xs md:text-sm px-4 py-2 rounded-full shadow-sm transition-all">
+                Hubungi Aku 💌
+            </a>
+        </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 pb-20">
+        
+<section class="space-y-8 pt-4">
+    <div class="text-center space-y-2">
+        <span class="text-3xl">🧸</span>
+        <h1 class="text-4xl md:text-6xl font-handwriting font-bold text-berry-text">Tentang Aku</h1>
+        <p class="font-cute text-xs text-rose-pink uppercase tracking-widest">Get to know me better 🌷</p>
+    </div>
+
+    <div class="girly-card p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
+        <div class="rounded-3xl overflow-hidden border-4 border-white shadow-lg">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=700"
+                 alt="Foto Profil" class="w-full h-[360px] object-cover">
+        </div>
+        <div class="space-y-5">
+            <span class="inline-block bg-soft-pink text-berry-text border border-dusty-pink px-3 py-1 rounded-full text-xs font-cute">✨ Hello, I'm Softie Girl</span>
+            <h2 class="text-3xl md:text-4xl font-garamond font-bold text-berry-text">Menciptakan sesuatu yang lembut, cantik, dan bermakna.</h2>
+            <p class="text-sm text-berry-text/80 leading-relaxed font-cute">
+                Aku adalah seorang UI/UX Designer dan Creative Content Creator yang suka menggabungkan estetika feminin dengan pengalaman digital yang nyaman digunakan.
+            </p>
+            <p class="text-sm text-berry-text/80 leading-relaxed font-cute">
+                Aku menyukai warna pastel, fotografi, ilustrasi bunga, journaling, serta proses mengubah ide sederhana menjadi karya visual yang punya karakter.
+            </p>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-cream-base rounded-2xl p-4 border border-dusty-pink/50">
+                    <div class="text-rose-pink text-xl">🎨</div><b class="font-cute text-sm">Creative</b>
+                </div>
+                <div class="bg-cream-base rounded-2xl p-4 border border-dusty-pink/50">
+                    <div class="text-rose-pink text-xl">💻</div><b class="font-cute text-sm">Digital</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="girly-card p-6 text-center"><div class="text-3xl mb-3">🩰</div><h3 class="font-cute font-bold text-lg">Gaya Desain</h3><p class="text-xs mt-2 leading-relaxed">Pastel, cream, vintage-modern, bersih, dan rapi.</p></div>
+        <div class="girly-card p-6 text-center"><div class="text-3xl mb-3">🍵</div><h3 class="font-cute font-bold text-lg">Hobi</h3><p class="text-xs mt-2 leading-relaxed">Matcha latte, musik indie-pop, ilustrasi bunga, dan journaling.</p></div>
+        <div class="girly-card p-6 text-center"><div class="text-3xl mb-3">🌷</div><h3 class="font-cute font-bold text-lg">Misi</h3><p class="text-xs mt-2 leading-relaxed">Membuat pengalaman digital yang hangat dan menyenangkan.</p></div>
+    </div>
+</section>
+
+    </main>
+
+    <footer class="chiffon-overlay border-t-2 border-dusty-pink/60 py-6 text-center text-xs font-cute text-berry-text">
+        <p>Made with <span class="text-rose-pink text-sm">💖</span> and ✨ | Soft Girly Polka Dot Palette</p>
+        <p class="text-[10px] text-berry-text/60 mt-2">© 2026 Softie Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

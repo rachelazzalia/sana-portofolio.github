@@ -1,0 +1,72 @@
+/* Background Polka Dot Soft Pink Texture inspired by sheer chiffon */
+        body {
+            background-color: #fbebf0;
+            background-image: 
+                radial-gradient(#2d2328 1.4px, transparent 1.4px),
+                radial-gradient(#2d2328 1.4px, #fbebf0 1.4px);
+            background-size: 36px 36px;
+            background-position: 0 0, 18px 18px;
+            color: #5c3a43;
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-garamond {
+            font-family: 'Apple Garamond', 'EB Garamond', Garamond, Georgia, serif;
+        }
+
+        /* Chiffon soft gradient overlay effect */
+        .chiffon-overlay {
+            background: linear-gradient(135deg, rgba(255, 252, 249, 0.82) 0%, rgba(252, 232, 238, 0.75) 50%, rgba(251, 244, 235, 0.85) 100%);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Glassmorphism soft girly card */
+        .girly-card {
+            background: rgba(255, 252, 249, 0.88);
+            border: 2px solid rgba(243, 184, 200, 0.6);
+            box-shadow: 0 10px 25px -5px rgba(232, 145, 168, 0.15), 0 8px 10px -6px rgba(92, 58, 67, 0.05);
+            border-radius: 2rem;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .girly-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -5px rgba(232, 145, 168, 0.25);
+            border-color: rgba(232, 145, 168, 0.9);
+        }
+
+        /* Floating elements animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .animate-float-slow {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbebf0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f3b8c8;
+            border-radius: 10px;
+            border: 2px solid #fbebf0;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e891a8;
+        }
+
+        /* Cute lace ribbon effect for card headers */
+        .lace-border {
+            border-bottom: 2px dashed #f3b8c8;
+        }
